@@ -3,17 +3,22 @@ var rightNow = moment().format("MMMM Do, YYYY");
 $("#currentDay").append(rightNow);
 console.log(rightNow);
 
-// Getting current hour
-var currentHour = parseInt(moment().format("H"));
-console.log(typeof currentHour);
-
-// color-code time blocks to indicate past, present, or future
-$(".description").addClass("present");
 
 
-
-// activate save button for that time block
 $(document).ready(function () {
+
+    // Getting current hour
+    var currentHour = parseInt(moment().format("H"));
+    console.log(typeof currentHour);
+
+    var currentHour = new Date();
+    console.log(currentHour.getHours());
+
+    // color-code time blocks to indicate past, present, or future
+    $(".description").addClass("present");
+
+
+    // activate save button for that time block
     $(".saveBtn").on("click", function () {
 
         //set local storage or save text to local storage
